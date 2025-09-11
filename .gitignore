@@ -9,6 +9,9 @@ pnpm-debug.log*
 dist/
 build/
 
+# Legacy model files (moved to src/assets/models)
+public/models/
+
 # Environment variables
 .env
 .env.local
