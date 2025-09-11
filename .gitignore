@@ -98,3 +98,5 @@ temp/
 
 # Local development
 .vite/
+
+.vercel
