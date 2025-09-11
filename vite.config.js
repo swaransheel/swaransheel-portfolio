@@ -65,6 +65,14 @@ export default defineConfig({
           ]
         }
       }
+    },
+    // Ensure public assets are properly copied
+    copyPublicDir: true
+  },
+  // Add alias for models to help with loading
+  resolve: {
+    alias: {
+      '/models': '/models'
     }
   }
 })

@@ -1,13 +1,38 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/models/(.*)",
+      "destination": "/models/$1"
+    },
+    {
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
+    },
+    {
+      "source": "/((?!models|assets|.*\\.).*)",
       "destination": "/index.html"
     }
   ],
   "headers": [
     {
-      "source": "/models/(.*)",
+      "source": "/models/(.*).glb",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "model/gltf-binary"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -15,5 +40,10 @@
         }
       ]
     }
-  ]
+  ],
+  "functions": {
+    "app.js": {
+      "maxDuration": 30
+    }
+  }
 }
