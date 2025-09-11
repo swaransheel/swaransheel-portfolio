@@ -69,7 +69,7 @@ _Bringing the charm of vintage operating systems to life in modern browsers with
 
 ---
 
-⭐ **Star this repository if you enjoyed the retro experience!** ⭐(https://tailwindcss.com/)
+⭐ **Star this repository if you enjoyed the retro experience!** ⭐
 
 A pixel-perfect, retro-inspired web portfolio that recreates the nostalgic experience of Windows 95/98 operating systems with modern web technologies and interactive 3D elements. This portfolio doesn't just showcase work — it **is** the work itself.
 
