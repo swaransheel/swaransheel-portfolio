@@ -5,9 +5,10 @@ import { Environment, PresentationControls, useGLTF } from "@react-three/drei";
 import { useState, Suspense } from "react";
 import { X } from "lucide-react";
 import ErrorBoundary from "../components/ErrorBoundary";
+import retroCarUrl from "../assets/models/retro-car.glb?url";
 
 function RetroCarModel({ onPartClick }) {
-  const gltf = useGLTF("/models/retro-car.glb");
+  const gltf = useGLTF(retroCarUrl);
 
   return (
     <group

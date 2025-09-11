@@ -5,9 +5,10 @@ import { Environment, PresentationControls, useGLTF } from "@react-three/drei";
 import { useState, Suspense } from "react";
 import { X } from "lucide-react";
 import ErrorBoundary from "../components/ErrorBoundary";
+import forestHouseUrl from "../assets/models/forest_house.glb?url";
 
 function ForestHouseModel({ onPartClick }) {
-  const gltf = useGLTF("/models/forest_house.glb");
+  const gltf = useGLTF(forestHouseUrl);
 
   return (
     <group
