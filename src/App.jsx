@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect } from "react";
 import BootLoader from "./components/BootLoader";
 import DesktopIcon from "./components/DesktopIcon";
 import Window from "./components/Window";
@@ -19,20 +19,17 @@ import nightBg5 from "./assets/gif/night-bg-5.gif";
 import StickyNote from "./components/StickyNote";
 import useRetroSounds from "./utils/sounds";
 import desktop_right from "./assets/gif/desktop_right.gif";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Study from "./pages/Study";
+import Experience from "./pages/Experience";
+import Gallery from "./pages/Gallery";
+import Skills from "./pages/Skills";
+import Certifications from "./pages/Certifications";
 import { motion } from "framer-motion";
-import LoadingSpinner from "./components/LoadingSpinner";
-
-// Lazy load page components for code splitting
-const About = lazy(() => import("./pages/About"));
-const Projects = lazy(() => import("./pages/Projects"));
-const Study = lazy(() => import("./pages/Study"));
-const Experience = lazy(() => import("./pages/Experience"));
-const Gallery = lazy(() => import("./pages/Gallery"));
-const Skills = lazy(() => import("./pages/Skills"));
-const Certifications = lazy(() => import("./pages/Certifications"));
-const FootballGame = lazy(() => import("./components/FootballGame"));
-const Connect = lazy(() => import("./pages/Connect"));
-const Achievements = lazy(() => import("./pages/Achievements"));
+import FootballGame from "./components/FootballGame";
+import Connect from "./pages/Connect";
+import Achievements from "./pages/Achievements";
 
 export default function App() {
   const [booted, setBooted] = useState(false);
@@ -157,9 +154,7 @@ export default function App() {
           {/* Windows */}
           {openApps.includes("about") && (
             <Window title="About.exe" onClose={() => closeWindow("about")}>
-              <Suspense fallback={<LoadingSpinner />}>
-                <About />
-              </Suspense>
+              <About />
             </Window>
           )}
           {openApps.includes("projects") && (
@@ -167,30 +162,22 @@ export default function App() {
               title="Projects.exe"
               onClose={() => closeWindow("projects")}
             >
-              <Suspense fallback={<LoadingSpinner />}>
-                <Projects />
-              </Suspense>
+              <Projects />
             </Window>
           )}
           {openApps.includes("study") && (
             <Window title="Education.exe" onClose={() => closeWindow("study")}>
-              <Suspense fallback={<LoadingSpinner />}>
-                <Study />
-              </Suspense>
+              <Study />
             </Window>
           )}
           {openApps.includes("exp") && (
             <Window title="Experience.exe" onClose={() => closeWindow("exp")}>
-              <Suspense fallback={<LoadingSpinner />}>
-                <Experience />
-              </Suspense>
+              <Experience />
             </Window>
           )}
           {openApps.includes("skills") && (
             <Window title="Skills.exe" onClose={() => closeWindow("skills")}>
-              <Suspense fallback={<LoadingSpinner />}>
-                <Skills />
-              </Suspense>
+              <Skills />
               {/* <SkillsComputer /> */}
             </Window>
           )}
@@ -199,23 +186,17 @@ export default function App() {
               title="Certifications.exe"
               onClose={() => closeWindow("certifications")}
             >
-              <Suspense fallback={<LoadingSpinner />}>
-                <Certifications />
-              </Suspense>
+              <Certifications />
             </Window>
           )}
           {openApps.includes("art") && (
             <Window title="Gallery.exe" onClose={() => closeWindow("art")}>
-              <Suspense fallback={<LoadingSpinner />}>
-                <Gallery />
-              </Suspense>
+              <Gallery />
             </Window>
           )}
           {openApps.includes("game") && (
             <Window title="Game.exe" onClose={() => closeWindow("game")}>
-              <Suspense fallback={<LoadingSpinner />}>
-                <FootballGame />
-              </Suspense>
+              <FootballGame />
             </Window>
           )}
           {openApps.includes("connect") && (
@@ -223,9 +204,7 @@ export default function App() {
               title="LetsConnect.exe"
               onClose={() => closeWindow("connect")}
             >
-              <Suspense fallback={<LoadingSpinner />}>
-                <Connect />
-              </Suspense>
+              <Connect />
             </Window>
           )}
           {openApps.includes("achievements") && (
@@ -233,9 +212,7 @@ export default function App() {
               title="Achievements.exe"
               onClose={() => closeWindow("achievements")}
             >
-              <Suspense fallback={<LoadingSpinner />}>
-                <Achievements />
-              </Suspense>
+              <Achievements />
             </Window>
           )}
           <StickyNote

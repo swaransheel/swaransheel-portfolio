@@ -2,13 +2,11 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
 import { Environment, PresentationControls, useGLTF } from "@react-three/drei";
-import { useState, Suspense } from "react";
+import { useState } from "react";
 import { X } from "lucide-react";
-import ErrorBoundary from "../components/ErrorBoundary";
-import forestHouseUrl from "../assets/models/forest_house.glb?url";
 
 function ForestHouseModel({ onPartClick }) {
-  const gltf = useGLTF(forestHouseUrl);
+  const gltf = useGLTF("/models/forest_house.glb");
 
   return (
     <group
@@ -62,32 +60,22 @@ export default function Skills() {
   return (
     <>
       <div className="sm:w-[800px] w-full h-[400px] sm:h-[600px] flex justify-center items-center relative">
-        <ErrorBoundary>
-          <Canvas shadows camera={{ position: [5, 1, 0], fov: 35 }}>
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
-            <Environment preset="city" />
+        <Canvas shadows camera={{ position: [5, 1, 0], fov: 35 }}>
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
+          <Environment preset="city" />
 
-            <PresentationControls
-              global
-              config={{ mass: 1, tension: 10 }}
-              snap={true}
-              rotation={[0, 0.3, 0]}
-              polar={[-0.2, 0.2]}
-              azimuth={[-0.4, 0.4]}
-            >
-              <Suspense
-                fallback={
-                  <div className="text-center text-gray-600 p-4">
-                    Loading 3D Model...
-                  </div>
-                }
-              >
-                <ForestHouseModel onPartClick={handlePartClick} />
-              </Suspense>
-            </PresentationControls>
-          </Canvas>
-        </ErrorBoundary>
+          <PresentationControls
+            global
+            config={{ mass: 1, tension: 10 }}
+            snap={true}
+            rotation={[0, 0.3, 0]}
+            polar={[-0.2, 0.2]}
+            azimuth={[-0.4, 0.4]}
+          >
+            <ForestHouseModel onPartClick={handlePartClick} />
+          </PresentationControls>
+        </Canvas>
 
         {/* Buttons mapped to parts */}
         <button

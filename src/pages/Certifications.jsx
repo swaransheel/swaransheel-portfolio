@@ -2,13 +2,11 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
 import { Environment, PresentationControls, useGLTF } from "@react-three/drei";
-import { useState, Suspense } from "react";
+import { useState } from "react";
 import { X } from "lucide-react";
-import ErrorBoundary from "../components/ErrorBoundary";
-import retroCarUrl from "../assets/models/retro-car.glb?url";
 
 function RetroCarModel({ onPartClick }) {
-  const gltf = useGLTF(retroCarUrl);
+  const gltf = useGLTF("/models/retro-car.glb");
 
   return (
     <group
@@ -68,32 +66,22 @@ export default function Certifications() {
   return (
     <>
       <div className="sm:w-[800px] w-full h-[400px] sm:h-[600px] flex justify-center items-center relative">
-        <ErrorBoundary>
-          <Canvas shadows camera={{ position: [5, 2, 5], fov: 35 }}>
-            <ambientLight intensity={0.6} />
-            <directionalLight position={[10, 10, 5]} intensity={1} castShadow />
-            <Environment preset="studio" />
+        <Canvas shadows camera={{ position: [5, 2, 5], fov: 35 }}>
+          <ambientLight intensity={0.6} />
+          <directionalLight position={[10, 10, 5]} intensity={1} castShadow />
+          <Environment preset="studio" />
 
-            <PresentationControls
-              global
-              config={{ mass: 1, tension: 10 }}
-              snap={true}
-              rotation={[0, 0.2, 0]}
-              polar={[-0.3, 0.3]}
-              azimuth={[-0.5, 0.5]}
-            >
-              <Suspense
-                fallback={
-                  <div className="text-center text-gray-600 p-4">
-                    Loading 3D Model...
-                  </div>
-                }
-              >
-                <RetroCarModel onPartClick={handlePartClick} />
-              </Suspense>
-            </PresentationControls>
-          </Canvas>
-        </ErrorBoundary>
+          <PresentationControls
+            global
+            config={{ mass: 1, tension: 10 }}
+            snap={true}
+            rotation={[0, 0.2, 0]}
+            polar={[-0.3, 0.3]}
+            azimuth={[-0.5, 0.5]}
+          >
+            <RetroCarModel onPartClick={handlePartClick} />
+          </PresentationControls>
+        </Canvas>
 
         {/* Buttons */}
         <button
