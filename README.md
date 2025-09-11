@@ -2,7 +2,7 @@
 
 [![React](https://img.shields.io/badge/React-19.1.0-blue.svg)](https://reactjs.org/)
 [![Three.js](https://img.shields.io/badge/Three.js-0.178.0-green.svg)](https://threejs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwin## 🎉 Credits & Acknowledgments
+[![Tailwind CSS](https://img.shields.io/badge/Tailwin##)] 🎉 Credits & Acknowledgments
 
 **Design Inspiration:**
 
@@ -55,12 +55,6 @@
 
 ---
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
 ## 👨‍💻 About the Developer
 
 **Built with ❤️ by [Swaransheel](https://github.com/swaransheel)**
@@ -75,9 +69,7 @@ _Bringing the charm of vintage operating systems to life in modern browsers with
 
 ---
 
-⭐ **Star this repository if you enjoyed the retro experience!** ⭐lue.svg)](https://tailwindcss.com/)
-[![Vite](https://img.shields.io/badge/Vite-7.0.4-yellow.svg)](https://vitejs.dev/)
-[![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
+⭐ **Star this repository if you enjoyed the retro experience!** ⭐(https://tailwindcss.com/)
 
 A pixel-perfect, retro-inspired web portfolio that recreates the nostalgic experience of Windows 95/98 operating systems with modern web technologies and interactive 3D elements. This portfolio doesn't just showcase work — it **is** the work itself.
 
