@@ -1,15 +1,39 @@
 {
   "rewrites": [
     {
-      "source": "/models/(.*)",
-      "destination": "/models/$1"
+      "source": "/about",
+      "destination": "/index.html"
     },
     {
-      "source": "/assets/(.*)",
-      "destination": "/assets/$1"
+      "source": "/projects",
+      "destination": "/index.html"
     },
     {
-      "source": "/(.*)",
+      "source": "/skills",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/certifications",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/experience",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/study",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/gallery",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/achievements",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/connect",
       "destination": "/index.html"
     }
   ],

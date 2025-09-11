@@ -1,10 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { ghPages } from "vite-plugin-gh-pages";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), ghPages()],
+  // Ensure Vite treats .glb files as static assets when imported
+  assetsInclude: ["**/*.glb"],
+  plugins: [react()],
   base: "/",
   publicDir: "public",
   build: {
