@@ -2,7 +2,11 @@
 
 [![React](https://img.shields.io/badge/React-19.1.0-blue.svg)](https://reactjs.org/)
 [![Three.js](https://img.shields.io/badge/Three.js-0.178.0-green.svg)](https://threejs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwin##)] 🎉 Credits & Acknowledgments
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4.10-38B2AC.svg)](https://tailwindcss.com/)
+
+---
+
+🎉 **Credits & Acknowledgments**
 
 **Design Inspiration:**
 
