@@ -81,11 +81,13 @@ export default function Certifications() {
               polar={[-0.3, 0.3]}
               azimuth={[-0.5, 0.5]}
             >
-              <Suspense fallback={
-                <div className="text-center text-gray-600 p-4">
-                  Loading 3D Model...
-                </div>
-              }>
+              <Suspense
+                fallback={
+                  <div className="text-center text-gray-600 p-4">
+                    Loading 3D Model...
+                  </div>
+                }
+              >
                 <RetroCarModel onPartClick={handlePartClick} />
               </Suspense>
             </PresentationControls>

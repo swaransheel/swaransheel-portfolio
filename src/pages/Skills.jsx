@@ -75,11 +75,13 @@ export default function Skills() {
               polar={[-0.2, 0.2]}
               azimuth={[-0.4, 0.4]}
             >
-              <Suspense fallback={
-                <div className="text-center text-gray-600 p-4">
-                  Loading 3D Model...
-                </div>
-              }>
+              <Suspense
+                fallback={
+                  <div className="text-center text-gray-600 p-4">
+                    Loading 3D Model...
+                  </div>
+                }
+              >
                 <ForestHouseModel onPartClick={handlePartClick} />
               </Suspense>
             </PresentationControls>
