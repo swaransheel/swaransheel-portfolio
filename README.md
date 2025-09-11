@@ -1,102 +1,223 @@
 # 🖥️ Swaransheel's Retro OS Portfolio
 
-A pixel-perfect, retro-inspired web portfolio built with React, Three.js, Tailwind ## 🎉 Credits & Inspiration
+[![React](https://img.shields.io/badge/React-19.1.0-blue.svg)](https://reactjs.org/)
+[![Three.js](https://img.shields.io/badge/Three.js-0.178.0-green.svg)](https://threejs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwin## 🎉 Credits & Acknowledgments
 
-- Classic Windows 95/98 UI inspiration
-- Pixel font - ppmondwest
-- Icons from Flaticon and custom pixel art using Gemini Nano Banana
-- Three.js community for 3D model optimization techniques
-- Framer Motion & Tailwind CSS documentation
-- React Three Fiber ecosystem for 3D web development
+**Design Inspiration:**
+
+- 🖥️ Classic Windows 95/98 UI aesthetics and interaction patterns
+- 🎮 Retro gaming interfaces and pixel art styling
+- 💾 Vintage computer systems and nostalgic computing experiences
+
+**Assets & Resources:**
+
+- 🔤 **Pixel Font**: `ppmondwest-regular.otf` for authentic retro typography
+- 🎨 **Icons**: Custom pixel art generated using **Gemini AI** and manual design
+- 🚗 **3D Models**: Sourced from [Sketchfab](https://sketchfab.com/) community
+- 🔊 **Sound Effects**: Custom retro computer audio samples
+
+**Technical References:**
+
+- 📚 **Three.js Community**: 3D model optimization and rendering techniques
+- 🎬 **Framer Motion**: Animation patterns and micro-interactions
+- 🎨 **Tailwind CSS**: Utility-first CSS methodology and responsive design
+- ⚛️ **React Three Fiber**: 3D web development ecosystem and best practices
+
+**Special Thanks:**
+
+- Open source community for tools and libraries
+- Sketchfab creators for high-quality 3D models
+- Retro computing enthusiasts for UI/UX inspiration
+
+---
+
+## 💡 Performance Optimizations
+
+- **📦 Code Splitting**: Lazy loading of components and 3D models
+- **🗜️ Asset Optimization**: Compressed images and optimized GLB models
+- **⚡ Vite Build**: Fast development and optimized production builds
+- **🎯 Selective Rendering**: Efficient 3D scene management and culling
+- **📱 Responsive Assets**: Multiple asset sizes for different screen densities
+
+---
+
+## 🪄 Fun Facts
+
+> **This portfolio doesn't just showcase work — it IS the work.**  
+> Every pixel, interaction, and 3D model has been carefully crafted to create an immersive retro computing experience.
+
+- 🏎️ The bootloader F1 crashing animation adds a dramatic "Crashing into my portfolio..." entrance
+- 🎮 The football game includes realistic physics and collision detection
+- 🎨 All UI elements follow authentic Windows 95/98 design specifications
+- 🔊 Sound effects were carefully selected to match retro computer audio
+- 📱 The entire interface scales seamlessly from mobile to 4K displays
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 👨‍💻 About the Developer
+
+**Built with ❤️ by [Swaransheel](https://github.com/swaransheel)**
+
+_Bringing the charm of vintage operating systems to life in modern browsers with cutting-edge web technologies and interactive 3D experiences._
+
+### 🤝 Connect
+
+- 💼 [LinkedIn](https://linkedin.com/in/swaransheel)
+- 🐙 [GitHub](https://github.com/swaransheel)
+- 📧 [Email](mailto:your-email@domain.com)
+
+---
+
+⭐ **Star this repository if you enjoyed the retro experience!** ⭐lue.svg)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-7.0.4-yellow.svg)](https://vitejs.dev/)
+[![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
+
+A pixel-perfect, retro-inspired web portfolio that recreates the nostalgic experience of Windows 95/98 operating systems with modern web technologies and interactive 3D elements. This portfolio doesn't just showcase work — it **is** the work itself.
+
+## 🌐 Live Demo
+
+**[🚀 Experience the Portfolio Live](https://swaransheel.vercel.app/)**
 
 ---
 
 ## 🛠️ Technical Highlights
 
-- **Performance Optimized**: Lazy loading, code splitting, and optimized 3D models
-- **Responsive Design**: Works seamlessly across desktop, tablet, and mobile devices
-- **Accessibility**: Keyboard navigation and screen reader support
-- **Modern Architecture**: Component-based React structure with custom hooks
-- **3D Integration**: Seamless blend of 2D retro UI with interactive 3D elements
+- **🎯 Performance Optimized**: Lazy loading, code splitting, and optimized 3D models
+- **📱 Responsive Design**: Seamless experience across desktop, tablet, and mobile devices
+- **♿ Accessibility**: Keyboard navigation and screen reader support
+- **🏗️ Modern Architecture**: Component-based React structure with custom hooks
+- **🎮 3D Integration**: Seamless blend of 2D retro UI with interactive 3D elements
+- **🔊 Audio Experience**: Custom sound effects for authentic retro feel
+- **⚡ Real-time Interactions**: Drag-and-drop windows, clickable 3D hotspots
+
+## 🕹️ Portfolio Overview
+
+This portfolio recreates the authentic experience of using a vintage operating system with:
+
+**🖥️ Desktop Experience:**
+
+- 🏎️ **BootLoader.exe** — F1 car crashing animation with "Crashing into my portfolio..." message
+- 🖱️ **Custom Desktop** — Draggable icons, authentic Windows 95/98 aesthetics
+- 🪟 **Window System** — Resizable, draggable application windows with retro borders
+- 📝 **Sticky Notes** — Interactive notes with pixel-perfect styling
+- 🎵 **Sound Effects** — Mouse clicks and hover sounds for immersive experience
+
+**📁 Application Portfolio:**
+
+- 🧑‍💻 **About.exe** — Personal introduction with animated elements
+- 💼 **Projects.exe** — 8 major projects with live demos and tech stacks
+- 🏆 **Certifications.exe** — Interactive 3D retro car with clickable certification categories
+- 🛠️ **Skills.exe** — 3D forest house model with skill visualization by components
+- 💼 **Experience.exe** — Professional timeline with zoomable interactive elements
+- 🏅 **Achievements.exe** — Awards and recognitions with interactive zoom and detailed showcase
+- 📚 **Study.exe** — Educational background and academic achievements
+- 🎨 **Gallery.exe** — Digital art showcase with retro gallery interface
+- 📬 **Connect.exe** — Professional networking links and contact information
+- 🏈 **FootballGame.exe** — Playable mini-game with arrow key controls
+
+**🎮 Interactive Elements:**
+
+- **3D Models**: Retro car, forest house, and retro computer models
+- **Mini-Game**: Football dodging game with score tracking
+- **Theme System**: Dynamic day/night background switching
+- **Sound System**: Authentic retro computer sound effects
 
 ---
 
-## 🪄 Fun Fact
+## 🔧 Tech Stack & Dependencies
 
-> This portfolio doesn't just showcase my work — it **is** my work. Every pixel, every interaction, and every 3D model has been carefully crafted to create an immersive retro computing experience.
+**Core Framework:**
 
----
+- ⚛️ **React 19.1.0** — Latest React with concurrent features
+- 🎨 **Tailwind CSS 3.4.0** — Utility-first CSS framework
+- 🏗️ **Vite 7.0.4** — Lightning-fast build tool and dev server
 
-## 🌐 Live Demo
+**3D Graphics & Animation:**
 
-Experience the portfolio live at: **[https://swaransheel.vercel.app/](https://swaransheel.vercel.app/)**
+- 🌟 **Three.js 0.178.0** — 3D graphics library
+- 🎯 **React Three Fiber 9.2.0** — React renderer for Three.js
+- 🎪 **React Three Drei 10.5.0** — Useful helpers and components
+- 🌀 **Framer Motion 12.23.12** — Production-ready motion library
 
----
+**Interactive Features:**
 
-**Built with ❤️ by Swaransheel** Motion — bringing the charm of vintage operating systems to life in the browser with interactive 3D models.
+- � **use-sound 5.0.0** — React hook for sound effects
+- 📱 **Lucide React 0.525.0** — Beautiful & consistent icon toolkit
+- 🎬 **Framer Motion Ticker 1.0.19** — Smooth scrolling text animations
 
-## 🕹️ Overview
+**Development Tools:**
 
-This portfolio mimics the experience of using an old-school OS: draggable desktop icons, bootloader screens, pixel fonts, glitch transitions, and windowed apps — all powered by modern web technologies and enhanced with interactive 3D models.
-
-You'll find sections like:
-
-- 🧑‍💻 About.exe — a window into who I am
-- 💼 Projects.exe — selected works & experiments including AI/ML, web development, and data science projects
-- 🎨 Gallery.exe — a creative corner showcasing digital art and designs
-- 🏆 Certifications.exe — interactive 3D showcase of professional certifications with retro car model
-- 🛠️ Skills.exe — technical skills visualization with forest house 3D model
-- 💼 Experience.exe — professional journey and achievements
-- 📚 Study.exe — educational background and academic projects
-- 📬 Connect.exe — ways to connect on LinkedIn, GitHub, and email
-- 🏈 FootballGame.exe — interactive mini-game for entertainment
-- 🐰 BootLoader — a pixel rabbit welcomes you on load
+- 📋 **ESLint 9.30.1** — Code linting and formatting
+- � **TypeScript Support** — Type definitions for React
+- 🔄 **PostCSS & Autoprefixer** — CSS processing and vendor prefixes
 
 ---
 
-## 🔧 Built With
+## ✨ Key Features
 
-- ⚛️ [React](https://reactjs.org/) — Core framework
-- � [Three.js](https://threejs.org/) — 3D graphics and interactive models
-- �🎨 [Tailwind CSS](https://tailwindcss.com/) — Styling
-- 🌀 [Framer Motion](https://www.framer.com/motion/) — Animations
-- 🖱️ [react-draggable](https://www.npmjs.com/package/react-draggable) — Window dragging
-- 🔊 [use-sound](https://www.npmjs.com/package/use-sound) — Sound effects
-- 🎯 [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction) — React renderer for Three.js
-- 🎪 [React Three Drei](https://github.com/pmndrs/drei) — Useful helpers for React Three Fiber
-- 🖼️ Custom pixel fonts, assets, and icons
-- 🖼️ Cursor + retro sounds for immersive OS feel
-- 🏗️ [Vite](https://vitejs.dev/) — Build tool and development server
+**🎮 3D Interactive Models:**
 
----
+- **🚗 Retro Car (Certifications)**: Click different car parts to explore:
 
-## 🧑‍🎨 Features
+  - Monitor → CCNA Networking
+  - Keyboard → Cybersecurity & IoT
+  - CPU → Data Science
+  - Mouse → AI/ML Certifications
+  - Speaker → Automation Tools
+  - Base → Programming Fundamentals
 
-- Custom bootloader animation (featuring a hopping rabbit 🐇)
-- Clickable desktop icons that open draggable windows
-- **Interactive 3D Models**:
-  - 🚗 Retro car model for certifications showcase
-  - 🏠 Forest house model for skills visualization
-  - 💻 Retro computer model integration
-- Start Menu with application launcher
-- Retro taskbar, sticky notes, and pixel-perfect borders
-- **Mini-Game**: Interactive football game for entertainment
+- **🏠 Forest House (Skills)**: Interactive house components representing:
+  - Roof → Programming Languages (Python, Java, C, C#, R)
+  - Door → Web Development (React, Node.js, JavaScript)
+  - Chimney → Databases (MySQL, PostgreSQL)
+  - Garden → AI/ML (Machine Learning, Pandas, NumPy)
+  - Foundation → Core CS (OOP, DSA)
+  - Windows → Tools (Git, VSCode, WEKA)
+
+**🎯 Portfolio Sections:**
+
+- **Projects Showcase**: 8 major projects with live demos including:
+  - TransparentPro (React, Node.js, AI)
+  - Bilingual Toxicity Detection (Flask, BERT, ML)
+  - CareerBoost Job Platform (React, Express, PostgreSQL)
+  - SalesChatAI (Flask, LangChain)
+  - Chat2PDF Assistant (Streamlit, Generative AI)
+
+**🎨 UI/UX Features:**
+
+- Pixel-perfect Windows 95/98 interface recreation
+- Custom bootloader with F1 car crashing animation
+- Draggable and resizable application windows
+- Authentic retro taskbar with start menu
+- Dynamic day/night theme switching
 - Custom cursor and hover sound effects
-- Framer Motion zoom-ins for timeline storytelling
-- **Professional Sections**:
-  - Certifications mapped to 3D car parts
-  - Skills categorized by house components
-  - Experience timeline with visual elements
-  - Project portfolio with live demos
-- **Theme System**: Dynamic background switching (day/night modes)
-- Pixel-art UI mimicking Windows 95/98 aesthetics
-- Responsive design for different screen sizes
+- Responsive design for all screen sizes
+
+**🏈 Interactive Mini-Game:**
+
+- Football dodging game with arrow key controls
+- Real-time score tracking and collision detection
+- Game over states and restart functionality
 
 ---
 
 ## 🚀 Getting Started
 
-1. **Clone the repo**
+### Prerequisites
+
+- Node.js 16+
+- npm or yarn package manager
+
+### Installation & Setup
+
+1. **Clone the repository**
 
 ```bash
 git clone https://github.com/swaransheel/swaransheel-portfolio.git
@@ -109,7 +230,7 @@ cd swaransheel-portfolio
 npm install
 ```
 
-3. **Start the dev server**
+3. **Start development server**
 
 ```bash
 npm run dev
@@ -121,38 +242,130 @@ npm run dev
 npm run build
 ```
 
-## 🎯 Project Structure
+5. **Preview production build**
 
-```
-src/
-├── components/          # Reusable UI components
-│   ├── FootballGame.jsx    # Interactive mini-game
-│   ├── ModelViewer.jsx     # 3D model renderer
-│   ├── Window.jsx          # Draggable window component
-│   └── ...
-├── pages/              # Main application pages
-│   ├── About.jsx          # Personal information
-│   ├── Projects.jsx       # Project showcase
-│   ├── Certifications.jsx # 3D certifications display
-│   ├── Skills.jsx         # 3D skills visualization
-│   └── ...
-├── assets/             # Static assets
-│   ├── models/            # 3D model files (.glb)
-│   ├── images/            # Icons, backgrounds, art
-│   ├── sounds/            # Audio effects
-│   └── fonts/             # Custom pixel fonts
-└── utils/              # Utility functions
+```bash
+npm run preview
 ```
 
-## 🎮 3D Models & Interactions
+### 🎮 How to Use
 
-This portfolio features several interactive 3D models:
+1. **Desktop Experience**: Click on desktop icons to open applications
+2. **Window Management**: Drag windows around, use the taskbar to switch between apps
+3. **3D Interactions**:
+   - In Certifications: Click on car parts to explore different certification categories
+   - In Skills: Click on house components to view skill categories
+4. **Mini-Game**: Use arrow keys (←→) to control the player in FootballGame.exe
+5. **Theme Switching**: Use the theme buttons to switch between day/night modes
+6. **Sound**: Hover over elements to hear authentic retro sound effects
 
-- **Retro Car (Certifications)**: Click different parts of the car to explore various certification categories
-- **Forest House (Skills)**: Interactive house with clickable components representing different skill areas
-- **Retro Computer**: Classic computer model for various displays
+---
 
-All models are optimized for web performance and include interactive hotspots for enhanced user engagement.
+## 📁 Project Architecture
+
+```
+swaransheel-portfolio/
+├── 📂 public/
+│   ├── 🎮 models/                 # 3D model files (.glb)
+│   │   ├── forest_house.glb       # Skills visualization model
+│   │   ├── retro-car.glb         # Certifications model
+│   │   └── retro-computer.glb     # Computer model
+│   └── 📄 resume/                # Resume files
+│
+├── 📂 src/
+│   ├── 📂 components/            # Reusable UI components
+│   │   ├── BootLoader.jsx        # Animated loading screen
+│   │   ├── CustomCursor.jsx      # Custom retro cursor
+│   │   ├── DesktopIcon.jsx       # Desktop application icons
+│   │   ├── FootballGame.jsx      # Interactive mini-game
+│   │   ├── ModelViewer.jsx       # 3D model renderer
+│   │   ├── Squares.jsx           # Animated background elements
+│   │   ├── StickyNote.jsx        # Retro sticky notes
+│   │   ├── Taskbar.jsx           # Windows-style taskbar
+│   │   ├── TypeWriter.jsx        # Typewriter text effect
+│   │   └── Window.jsx            # Draggable window component
+│   │
+│   ├── 📂 pages/                 # Main application pages
+│   │   ├── About.jsx             # Personal information
+│   │   ├── Achievements.jsx      # Awards and recognitions
+│   │   ├── Certifications.jsx    # 3D interactive certifications
+│   │   ├── Connect.jsx           # Contact and social links
+│   │   ├── Experience.jsx        # Professional timeline
+│   │   ├── Gallery.jsx           # Digital art showcase
+│   │   ├── Projects.jsx          # Project portfolio
+│   │   ├── Skills.jsx            # 3D skills visualization
+│   │   ├── SkillsComputer.jsx    # Alternative skills view
+│   │   └── Study.jsx             # Educational background
+│   │
+│   ├── 📂 assets/                # Static assets
+│   │   ├── 🎨 art/               # Digital artwork
+│   │   ├── ⚡ buttons/           # UI button assets
+│   │   ├── 📊 constants/         # Data constants
+│   │   ├── 🖱️ cursors/           # Custom cursor images
+│   │   ├── 🖥️ desktopIcons/      # Desktop application icons
+│   │   ├── 🔤 fonts/             # Custom pixel fonts
+│   │   ├── 🎮 game/              # Game assets
+│   │   ├── 🎬 gif/               # Animated backgrounds
+│   │   ├── 👤 me/                # Personal photos
+│   │   ├── 💼 projects/          # Project screenshots
+│   │   ├── 🔊 sfx/               # Sound effects
+│   │   └── 😊 smiley/            # Emoji assets
+│   │
+│   ├── 📂 utils/                 # Utility functions
+│   │   └── sounds.jsx            # Sound management
+│   │
+│   ├── App.jsx                   # Main application component
+│   ├── main.jsx                  # Application entry point
+│   └── index.css                 # Global styles
+│
+├── 📄 Configuration Files
+├── eslint.config.js              # ESLint configuration
+├── postcss.config.js             # PostCSS configuration
+├── tailwind.config.js            # Tailwind CSS configuration
+├── vite.config.js                # Vite build configuration
+└── package.json                  # Dependencies and scripts
+```
+
+---
+
+## 🎮 3D Models & Interactive Elements
+
+### 🚗 Retro Car Model (Certifications)
+
+**Interactive Hotspots:**
+
+- **Monitor** → CCNA Networking Certification
+- **Keyboard** → Cybersecurity & IoT Internships
+- **CPU** → Data Engineering Virtual Internship (AWS)
+- **Mouse** → AI-ML & Generative AI Internships
+- **Speaker** → Blue Prism Automation Internship
+- **Base** → Programming & Data Structures (Python)
+
+### 🏠 Forest House Model (Skills)
+
+**Clickable Components:**
+
+- **Roof** → Programming Languages (Python, Java, C, C#, R)
+- **Door** → Web Development (ReactJS, Node.js, Express.js)
+- **Chimney** → Databases (MySQL, PostgreSQL, DBMS)
+- **Garden** → AI/ML (Machine Learning, Pandas, NumPy, LangChain)
+- **Foundation** → Core Computer Science (OOP, DSA, Data Warehousing)
+- **Windows** → Development Tools (Git, WEKA, Blue Prism, VSCode)
+
+### 🏈 Football Mini-Game
+
+- **Controls**: Arrow keys (← →) to move player
+- **Objective**: Dodge falling footballs and achieve high scores
+- **Features**: Real-time collision detection, score tracking, game over states
+
+### 🎨 Visual Effects
+
+- **Particle Systems**: Animated background elements
+- **3D Environments**: Studio and city lighting presets
+- **Motion Graphics**: Framer Motion animations for smooth transitions
+- **Sound Design**: Retro computer sound effects for authentic experience
+
+---
 
 ## 🎉 Credits & Inspiration
 
