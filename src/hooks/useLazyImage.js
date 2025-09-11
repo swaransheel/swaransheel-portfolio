@@ -1,17 +1,17 @@
 // src/hooks/useLazyImage.js
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-export const useLazyImage = (src, placeholder = '') => {
+export const useLazyImage = (src, placeholder = "") => {
   const [imageSrc, setImageSrc] = useState(placeholder);
   const [imageRef, setImageRef] = useState();
 
   useEffect(() => {
     let observer;
-    
+
     if (imageRef && imageSrc === placeholder) {
       observer = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
+        (entries) => {
+          entries.forEach((entry) => {
             if (entry.isIntersecting) {
               setImageSrc(src);
               observer.unobserve(imageRef);
@@ -22,7 +22,7 @@ export const useLazyImage = (src, placeholder = '') => {
       );
       observer.observe(imageRef);
     }
-    
+
     return () => {
       if (observer && observer.unobserve) {
         observer.unobserve(imageRef);
