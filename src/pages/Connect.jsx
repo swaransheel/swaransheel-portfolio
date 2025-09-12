@@ -15,7 +15,7 @@ export default function Connect() {
 
           <div className="flex flex-col p-4 text-xs sm:text-lg border-t-2 border-l-2 border-gray-200 border-b-2 border-r-2 border-b-gray-500 border-r-gray-500 bg-white shadow-md">
             Hey! You’ve reached{" "}
-            <span className="text-blue-600">Chinthamalla Swaransheel</span> 📞{" "}
+            <span className="text-blue-600">Chinthamalla Swaransheel</span>{" "}
             <br />
             Based in Hyderabad, passionate about AI/ML, Web Dev, and Data
             Science. <br />
@@ -59,7 +59,7 @@ export default function Connect() {
               </a>
             </div>
             <p className="mt-2 text-gray-700 text-xs sm:text-sm">
-              📱 +91 6301515641
+              📞 +91 6301515641
             </p>
           </div>
         </div>

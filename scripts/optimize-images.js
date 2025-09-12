@@ -1,7 +1,7 @@
-import sharp from 'sharp';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import sharp from "sharp";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,7 +19,7 @@ const config = {
   png: {
     quality: 85,
     compressionLevel: 8,
-  }
+  },
 };
 
 /**
@@ -36,7 +36,7 @@ async function convertToWebP(inputDir, outputDir) {
     }
 
     const files = fs.readdirSync(inputDir);
-    const imageFiles = files.filter(file => file.match(/\.(jpg|jpeg|png)$/i));
+    const imageFiles = files.filter((file) => file.match(/\.(jpg|jpeg|png)$/i));
 
     if (imageFiles.length === 0) {
       console.log(`No JPG/PNG files found in ${inputDir}`);
@@ -47,23 +47,28 @@ async function convertToWebP(inputDir, outputDir) {
 
     for (const file of imageFiles) {
       const inputPath = path.join(inputDir, file);
-      const outputFileName = file.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+      const outputFileName = file.replace(/\.(jpg|jpeg|png)$/i, ".webp");
       const outputPath = path.join(outputDir, outputFileName);
 
       try {
         const stats = fs.statSync(inputPath);
         const originalSize = stats.size;
 
-        await sharp(inputPath)
-          .webp(config.webp)
-          .toFile(outputPath);
+        await sharp(inputPath).webp(config.webp).toFile(outputPath);
 
         const newStats = fs.statSync(outputPath);
         const newSize = newStats.size;
-        const savings = ((originalSize - newSize) / originalSize * 100).toFixed(1);
+        const savings = (
+          ((originalSize - newSize) / originalSize) *
+          100
+        ).toFixed(1);
 
         console.log(`✅ ${file} → ${outputFileName}`);
-        console.log(`   Size: ${(originalSize / 1024).toFixed(1)}KB → ${(newSize / 1024).toFixed(1)}KB (${savings}% reduction)`);
+        console.log(
+          `   Size: ${(originalSize / 1024).toFixed(1)}KB → ${(
+            newSize / 1024
+          ).toFixed(1)}KB (${savings}% reduction)`
+        );
       } catch (error) {
         console.error(`❌ Failed to convert ${file}:`, error.message);
       }
@@ -71,7 +76,7 @@ async function convertToWebP(inputDir, outputDir) {
 
     console.log(`\n🎉 WebP conversion completed!`);
   } catch (error) {
-    console.error('Error during WebP conversion:', error);
+    console.error("Error during WebP conversion:", error);
   }
 }
 
@@ -82,7 +87,7 @@ async function convertToWebP(inputDir, outputDir) {
 async function optimizeOriginals(inputDir) {
   try {
     const files = fs.readdirSync(inputDir);
-    const imageFiles = files.filter(file => file.match(/\.(jpg|jpeg|png)$/i));
+    const imageFiles = files.filter((file) => file.match(/\.(jpg|jpeg|png)$/i));
 
     console.log(`\nOptimizing ${imageFiles.length} original images...`);
 
@@ -95,13 +100,9 @@ async function optimizeOriginals(inputDir) {
         const originalSize = stats.size;
 
         if (file.match(/\.(jpg|jpeg)$/i)) {
-          await sharp(filePath)
-            .jpeg(config.jpeg)
-            .toFile(tempPath);
+          await sharp(filePath).jpeg(config.jpeg).toFile(tempPath);
         } else if (file.match(/\.png$/i)) {
-          await sharp(filePath)
-            .png(config.png)
-            .toFile(tempPath);
+          await sharp(filePath).png(config.png).toFile(tempPath);
         }
 
         // Replace original with optimized version
@@ -109,10 +110,17 @@ async function optimizeOriginals(inputDir) {
 
         const newStats = fs.statSync(filePath);
         const newSize = newStats.size;
-        const savings = ((originalSize - newSize) / originalSize * 100).toFixed(1);
+        const savings = (
+          ((originalSize - newSize) / originalSize) *
+          100
+        ).toFixed(1);
 
         console.log(`✅ Optimized ${file}`);
-        console.log(`   Size: ${(originalSize / 1024).toFixed(1)}KB → ${(newSize / 1024).toFixed(1)}KB (${savings}% reduction)`);
+        console.log(
+          `   Size: ${(originalSize / 1024).toFixed(1)}KB → ${(
+            newSize / 1024
+          ).toFixed(1)}KB (${savings}% reduction)`
+        );
       } catch (error) {
         console.error(`❌ Failed to optimize ${file}:`, error.message);
         // Clean up temp file if it exists
@@ -124,7 +132,7 @@ async function optimizeOriginals(inputDir) {
 
     console.log(`\n🎉 Original image optimization completed!`);
   } catch (error) {
-    console.error('Error during original image optimization:', error);
+    console.error("Error during original image optimization:", error);
   }
 }
 
@@ -134,23 +142,23 @@ async function optimizeOriginals(inputDir) {
 function getDirectorySize(dirPath) {
   let totalSize = 0;
   const files = fs.readdirSync(dirPath);
-  
-  files.forEach(file => {
+
+  files.forEach((file) => {
     const filePath = path.join(dirPath, file);
     const stats = fs.statSync(filePath);
     totalSize += stats.size;
   });
-  
+
   return (totalSize / 1024).toFixed(1);
 }
 
 // Main execution
 async function main() {
-  const artDir = path.join(__dirname, '..', 'src', 'assets', 'art');
-  const webpDir = path.join(__dirname, '..', 'public', 'images', 'webp');
+  const artDir = path.join(__dirname, "..", "src", "assets", "art");
+  const webpDir = path.join(__dirname, "..", "public", "images", "webp");
 
-  console.log('🖼️  Image Optimization Tool');
-  console.log('============================');
+  console.log("🖼️  Image Optimization Tool");
+  console.log("============================");
 
   // Check if art directory exists
   if (!fs.existsSync(artDir)) {
@@ -168,7 +176,7 @@ async function main() {
   await convertToWebP(artDir, webpDir);
 
   // Optimize originals (optional)
-  const shouldOptimizeOriginals = process.argv.includes('--optimize-originals');
+  const shouldOptimizeOriginals = process.argv.includes("--optimize-originals");
   if (shouldOptimizeOriginals) {
     await optimizeOriginals(artDir);
     const optimizedSize = getDirectorySize(artDir);
@@ -178,12 +186,17 @@ async function main() {
   if (fs.existsSync(webpDir)) {
     const webpSize = getDirectorySize(webpDir);
     console.log(`📊 WebP directory size: ${webpSize}KB`);
-    
-    const totalSavings = ((originalSize - webpSize) / originalSize * 100).toFixed(1);
+
+    const totalSavings = (
+      ((originalSize - webpSize) / originalSize) *
+      100
+    ).toFixed(1);
     console.log(`\n💾 Total WebP savings: ${totalSavings}%`);
   }
 
-  console.log('\n🚀 To use WebP images, update your Gallery component with the picture element!');
+  console.log(
+    "\n🚀 To use WebP images, update your Gallery component with the picture element!"
+  );
 }
 
 // Run the script

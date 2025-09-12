@@ -10,44 +10,50 @@ const Gallery = memo(function Gallery() {
   const current = useMemo(() => gallery[activeTab], [activeTab]);
 
   // Preload images for better performance
-  const preloadImage = useCallback((src, webpSrc) => {
-    const cacheKey = `${src}_${webpSrc}`;
-    if (preloadedImages.has(cacheKey)) return;
-    
-    // Test if WebP is supported and file exists
-    const webpImg = new Image();
-    webpImg.onload = () => {
-      setPreloadedImages(prev => new Set([...prev, cacheKey]));
-      setImageLoadStates(prev => ({ ...prev, [cacheKey]: 'webp-loaded' }));
-    };
-    webpImg.onerror = () => {
-      // WebP failed, mark as unavailable and rely on fallback
-      setImageLoadStates(prev => ({ ...prev, [cacheKey]: 'webp-failed' }));
-      
-      // Preload original format
-      const originalImg = new Image();
-      originalImg.onload = () => {
-        setPreloadedImages(prev => new Set([...prev, cacheKey]));
-        setImageLoadStates(prev => ({ ...prev, [cacheKey]: 'original-loaded' }));
+  const preloadImage = useCallback(
+    (src, webpSrc) => {
+      const cacheKey = `${src}_${webpSrc}`;
+      if (preloadedImages.has(cacheKey)) return;
+
+      // Test if WebP is supported and file exists
+      const webpImg = new Image();
+      webpImg.onload = () => {
+        setPreloadedImages((prev) => new Set([...prev, cacheKey]));
+        setImageLoadStates((prev) => ({ ...prev, [cacheKey]: "webp-loaded" }));
       };
-      originalImg.onerror = () => {
-        setImageLoadStates(prev => ({ ...prev, [cacheKey]: 'error' }));
+      webpImg.onerror = () => {
+        // WebP failed, mark as unavailable and rely on fallback
+        setImageLoadStates((prev) => ({ ...prev, [cacheKey]: "webp-failed" }));
+
+        // Preload original format
+        const originalImg = new Image();
+        originalImg.onload = () => {
+          setPreloadedImages((prev) => new Set([...prev, cacheKey]));
+          setImageLoadStates((prev) => ({
+            ...prev,
+            [cacheKey]: "original-loaded",
+          }));
+        };
+        originalImg.onerror = () => {
+          setImageLoadStates((prev) => ({ ...prev, [cacheKey]: "error" }));
+        };
+        originalImg.src = src;
       };
-      originalImg.src = src;
-    };
-    webpImg.src = webpSrc;
-    setImageLoadStates(prev => ({ ...prev, [cacheKey]: 'loading' }));
-  }, [preloadedImages]);
+      webpImg.src = webpSrc;
+      setImageLoadStates((prev) => ({ ...prev, [cacheKey]: "loading" }));
+    },
+    [preloadedImages]
+  );
 
   // Preload current and adjacent images
   useEffect(() => {
     // Preload current image
     preloadImage(current.img, current.webp);
-    
+
     // Preload next/previous images for smooth navigation
     const nextIndex = (activeTab + 1) % gallery.length;
     const prevIndex = (activeTab - 1 + gallery.length) % gallery.length;
-    
+
     preloadImage(gallery[nextIndex].img, gallery[nextIndex].webp);
     preloadImage(gallery[prevIndex].img, gallery[prevIndex].webp);
   }, [activeTab, current.img, current.webp, preloadImage]);
@@ -68,19 +74,17 @@ const Gallery = memo(function Gallery() {
                           border-b-gray-500 border-r-gray-500 bg-white shadow-md relative"
           >
             {/* Loading placeholder */}
-            {imageLoadStates[`${current.img}_${current.webp}`] === 'loading' && (
+            {imageLoadStates[`${current.img}_${current.webp}`] ===
+              "loading" && (
               <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
                 <div className="text-gray-400 text-sm">Loading...</div>
               </div>
             )}
-            
+
             <a href={current.link} target="_blank" className="h-full w-full">
               <picture>
                 {/* WebP source for modern browsers */}
-                <source 
-                  srcSet={current.webp} 
-                  type="image/webp" 
-                />
+                <source srcSet={current.webp} type="image/webp" />
                 {/* Fallback for older browsers */}
                 <img
                   src={current.img}
@@ -89,19 +93,32 @@ const Gallery = memo(function Gallery() {
                   decoding="async"
                   fetchPriority="high"
                   className={`gallery-image w-full h-full object-cover hover:scale-110 transition-all duration-200
-                    ${imageLoadStates[`${current.img}_${current.webp}`]?.includes('loaded') ? 'opacity-100' : 'opacity-0'}`}
+                    ${
+                      imageLoadStates[
+                        `${current.img}_${current.webp}`
+                      ]?.includes("loaded")
+                        ? "opacity-100"
+                        : "opacity-0"
+                    }`}
                   style={{
                     willChange: "transform",
                     transform: "translateZ(0)",
-                    transition: "opacity 0.3s ease-in-out, transform 0.2s ease-in-out",
+                    transition:
+                      "opacity 0.3s ease-in-out, transform 0.2s ease-in-out",
                   }}
                   onLoad={() => {
                     const cacheKey = `${current.img}_${current.webp}`;
-                    setImageLoadStates(prev => ({ ...prev, [cacheKey]: 'loaded' }));
+                    setImageLoadStates((prev) => ({
+                      ...prev,
+                      [cacheKey]: "loaded",
+                    }));
                   }}
                   onError={() => {
                     const cacheKey = `${current.img}_${current.webp}`;
-                    setImageLoadStates(prev => ({ ...prev, [cacheKey]: 'error' }));
+                    setImageLoadStates((prev) => ({
+                      ...prev,
+                      [cacheKey]: "error",
+                    }));
                   }}
                 />
               </picture>
@@ -132,10 +149,7 @@ const Gallery = memo(function Gallery() {
                            font-bold transition-transform duration-300 flex-shrink-0"
               >
                 <picture>
-                  <source 
-                    srcSet={item.webp} 
-                    type="image/webp" 
-                  />
+                  <source srcSet={item.webp} type="image/webp" />
                   <img
                     src={item.img}
                     alt={item.title}
@@ -145,14 +159,23 @@ const Gallery = memo(function Gallery() {
                                hover:border-l-4 hover:border-t-4 hover:border-b-4 hover:border-r-4 
                                border-t-2 border-l-2 border-gray-500 border-b-2 border-r-2 
                                border-b-gray-200 border-r-gray-200 bg-gray-100
-                               ${imageLoadStates[`${item.img}_${item.webp}`]?.includes('loaded') ? 'opacity-100' : 'opacity-75'}`}
+                               ${
+                                 imageLoadStates[
+                                   `${item.img}_${item.webp}`
+                                 ]?.includes("loaded")
+                                   ? "opacity-100"
+                                   : "opacity-75"
+                               }`}
                     style={{
                       transform: "translateZ(0)",
                       transition: "opacity 0.2s ease-in-out",
                     }}
                     onLoad={() => {
                       const cacheKey = `${item.img}_${item.webp}`;
-                      setImageLoadStates(prev => ({ ...prev, [cacheKey]: 'loaded' }));
+                      setImageLoadStates((prev) => ({
+                        ...prev,
+                        [cacheKey]: "loaded",
+                      }));
                     }}
                   />
                 </picture>

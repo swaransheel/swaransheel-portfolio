@@ -46,15 +46,20 @@ picture {
 }
 
 /* Preload critical gallery images */
-.gallery-image, .gallery-thumbnail {
+.gallery-image,
+.gallery-thumbnail {
   content-visibility: auto;
   contain-intrinsic-size: 400px 400px;
 }
 
 /* Loading animation */
 @keyframes shimmer {
-  0% { background-position: -200px 0; }
-  100% { background-position: calc(200px + 100%) 0; }
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
 }
 
 .loading-shimmer {
