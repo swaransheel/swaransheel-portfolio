@@ -77,7 +77,7 @@ A pixel-perfect, retro-inspired web portfolio that recreates the nostalgic exper
 
 ## 🌐 Live Demo
 
-**[🚀 Experience the Portfolio Live](https://swaransheel.vercel.app/)**
+**[🚀 Experience the Portfolio Live](https://swaransheel.netlify.app/)**
 
 ---
 
