@@ -9,27 +9,22 @@ const Gallery = memo(function Gallery() {
   // Memoize current image to prevent unnecessary re-calculations
   const current = useMemo(() => gallery[activeTab], [activeTab]);
 
-  // Helper function to get WebP image path
-  const getWebPPath = useCallback((originalPath) => {
-    // Convert src/assets/art/img_X.jpg to /images/webp/img_X.webp
-    const filename = originalPath.split('/').pop(); // Get filename
-    const webpFilename = filename.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-    return `/images/webp/${webpFilename}`;
-  }, []);
-
   // Preload images for better performance
   const preloadImage = useCallback((src, webpSrc) => {
     const cacheKey = `${src}_${webpSrc}`;
     if (preloadedImages.has(cacheKey)) return;
     
-    // Preload WebP first (if supported)
+    // Test if WebP is supported and file exists
     const webpImg = new Image();
     webpImg.onload = () => {
       setPreloadedImages(prev => new Set([...prev, cacheKey]));
       setImageLoadStates(prev => ({ ...prev, [cacheKey]: 'webp-loaded' }));
     };
     webpImg.onerror = () => {
-      // If WebP fails, try original format
+      // WebP failed, mark as unavailable and rely on fallback
+      setImageLoadStates(prev => ({ ...prev, [cacheKey]: 'webp-failed' }));
+      
+      // Preload original format
       const originalImg = new Image();
       originalImg.onload = () => {
         setPreloadedImages(prev => new Set([...prev, cacheKey]));
@@ -46,19 +41,16 @@ const Gallery = memo(function Gallery() {
 
   // Preload current and adjacent images
   useEffect(() => {
-    const webpPath = getWebPPath(current.img);
-    preloadImage(current.img, webpPath);
+    // Preload current image
+    preloadImage(current.img, current.webp);
     
     // Preload next/previous images for smooth navigation
     const nextIndex = (activeTab + 1) % gallery.length;
     const prevIndex = (activeTab - 1 + gallery.length) % gallery.length;
     
-    const nextWebpPath = getWebPPath(gallery[nextIndex].img);
-    const prevWebpPath = getWebPPath(gallery[prevIndex].img);
-    
-    preloadImage(gallery[nextIndex].img, nextWebpPath);
-    preloadImage(gallery[prevIndex].img, prevWebpPath);
-  }, [activeTab, current.img, getWebPPath, preloadImage]);
+    preloadImage(gallery[nextIndex].img, gallery[nextIndex].webp);
+    preloadImage(gallery[prevIndex].img, gallery[prevIndex].webp);
+  }, [activeTab, current.img, current.webp, preloadImage]);
 
   // Callback to handle tab changes
   const handleTabChange = useCallback((index) => {
@@ -76,7 +68,7 @@ const Gallery = memo(function Gallery() {
                           border-b-gray-500 border-r-gray-500 bg-white shadow-md relative"
           >
             {/* Loading placeholder */}
-            {imageLoadStates[`${current.img}_${getWebPPath(current.img)}`] === 'loading' && (
+            {imageLoadStates[`${current.img}_${current.webp}`] === 'loading' && (
               <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
                 <div className="text-gray-400 text-sm">Loading...</div>
               </div>
@@ -86,7 +78,7 @@ const Gallery = memo(function Gallery() {
               <picture>
                 {/* WebP source for modern browsers */}
                 <source 
-                  srcSet={getWebPPath(current.img)} 
+                  srcSet={current.webp} 
                   type="image/webp" 
                 />
                 {/* Fallback for older browsers */}
@@ -97,18 +89,18 @@ const Gallery = memo(function Gallery() {
                   decoding="async"
                   fetchPriority="high"
                   className={`gallery-image w-full h-full object-cover hover:scale-110 transition-all duration-200
-                    ${imageLoadStates[`${current.img}_${getWebPPath(current.img)}`]?.includes('loaded') ? 'opacity-100' : 'opacity-0'}`}
+                    ${imageLoadStates[`${current.img}_${current.webp}`]?.includes('loaded') ? 'opacity-100' : 'opacity-0'}`}
                   style={{
                     willChange: "transform",
                     transform: "translateZ(0)",
                     transition: "opacity 0.3s ease-in-out, transform 0.2s ease-in-out",
                   }}
                   onLoad={() => {
-                    const cacheKey = `${current.img}_${getWebPPath(current.img)}`;
+                    const cacheKey = `${current.img}_${current.webp}`;
                     setImageLoadStates(prev => ({ ...prev, [cacheKey]: 'loaded' }));
                   }}
                   onError={() => {
-                    const cacheKey = `${current.img}_${getWebPPath(current.img)}`;
+                    const cacheKey = `${current.img}_${current.webp}`;
                     setImageLoadStates(prev => ({ ...prev, [cacheKey]: 'error' }));
                   }}
                 />
@@ -141,7 +133,7 @@ const Gallery = memo(function Gallery() {
               >
                 <picture>
                   <source 
-                    srcSet={getWebPPath(item.img)} 
+                    srcSet={item.webp} 
                     type="image/webp" 
                   />
                   <img
@@ -153,13 +145,13 @@ const Gallery = memo(function Gallery() {
                                hover:border-l-4 hover:border-t-4 hover:border-b-4 hover:border-r-4 
                                border-t-2 border-l-2 border-gray-500 border-b-2 border-r-2 
                                border-b-gray-200 border-r-gray-200 bg-gray-100
-                               ${imageLoadStates[`${item.img}_${getWebPPath(item.img)}`]?.includes('loaded') ? 'opacity-100' : 'opacity-75'}`}
+                               ${imageLoadStates[`${item.img}_${item.webp}`]?.includes('loaded') ? 'opacity-100' : 'opacity-75'}`}
                     style={{
                       transform: "translateZ(0)",
                       transition: "opacity 0.2s ease-in-out",
                     }}
                     onLoad={() => {
-                      const cacheKey = `${item.img}_${getWebPPath(item.img)}`;
+                      const cacheKey = `${item.img}_${item.webp}`;
                       setImageLoadStates(prev => ({ ...prev, [cacheKey]: 'loaded' }));
                     }}
                   />
