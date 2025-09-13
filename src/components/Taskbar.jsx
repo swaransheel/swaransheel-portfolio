@@ -8,6 +8,7 @@ import ExperienceIcon from "../assets/desktopIcons/experience.png";
 import StudyIcon from "../assets/desktopIcons/study.png";
 import ProjectsIcon from "../assets/desktopIcons/projects.png";
 import ArtIcon from "../assets/desktopIcons/art.png";
+import AchievementsIcon from "../assets/desktopIcons/Achievements.png";
 import LinkedIn from "../assets/desktopIcons/linkedin-pixel.png";
 import Github from "../assets/desktopIcons/github-pixel.png";
 import MailIcon from "../assets/desktopIcons/mail.png";
@@ -111,6 +112,20 @@ export default function Taskbar({
               className="inline-block w-4 h-4 mr-2"
             />{" "}
             Experience.exe
+          </div>
+          <div
+            onClick={() => {
+              onAppClick("achievements");
+              setShowMenu(false);
+            }}
+            className="px-3 py-2 hover:bg-blue-600 border-b-2 border-gray-300 hover:text-white cursor-pointer"
+          >
+            <img
+              src={AchievementsIcon}
+              alt="Achievements"
+              className="inline-block w-4 h-4 mr-2"
+            />{" "}
+            Achievements.exe
           </div>
           <div
             onClick={() => {
