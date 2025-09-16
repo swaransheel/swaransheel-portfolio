@@ -183,19 +183,22 @@ export default function Taskbar({
         </button>
 
         <div className="ml-auto flex leading-sm flex-row px-4 text-sm gap-2 sm:text-2xl">
-          <a href="mailto:shruti128770@gmail.com" target="_blank">
+          <a href="mailto:chinthamallaswaransheel@gmail.com" target="_blank">
             <img
               src={MailIcon}
               className="hover:scale-110 w-4 h-4 sm:w-8 sm:h-8 cursor-pointer"
             ></img>
           </a>
-          <a href="https://github.com/shrutitaylor/" target="_blank">
+          <a href="https://github.com/swaransheel" target="_blank">
             <img
               src={Github}
               className="hover:scale-110 w-4 h-4 sm:w-8 sm:h-8  cursor-pointer"
             ></img>
           </a>
-          <a href="https://www.linkedin.com/in/shruti-ms/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/swaransheel-chinthamalla-741979265/"
+            target="_blank"
+          >
             <img
               src={LinkedIn}
               className="hover:scale-110 w-4 h-4 sm:w-8 sm:h-8 cursor-pointer"
