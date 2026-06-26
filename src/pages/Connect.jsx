@@ -47,7 +47,7 @@ export default function Connect() {
                 />
               </a>
               <a
-                href="https://www.linkedin.com/in/swaransheel-chinthamalla-741979265"
+                href="https://www.linkedin.com/in/swaransheel-chinthamalla/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
